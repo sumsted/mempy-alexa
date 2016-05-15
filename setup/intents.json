@@ -1,0 +1,43 @@
+{
+  "intents": [
+    {
+      "intent": "startPointBreakIntent"
+    },
+    {
+      "intent": "pointBreakOneIntent"
+    },
+    {
+      "intent": "pointBreakTwoIntent"
+    },
+    {
+      "intent": "pointBreakThreeIntent"
+    },
+    {
+      "intent": "startHolyGrailIntent"
+    },
+    {
+      "intent": "holyGrailOneIntent"
+    },
+    {
+      "intent": "holyGrailTwoIntent"
+    },
+    {
+      "intent": "holyGrailThreeIntent"
+    },
+    {
+      "intent": "holyGrailFourIntent",
+      "slots": [
+        {
+          "name": "nextNumber",
+          "type": "AMAZON.NUMBER"
+        }
+      ]
+    },
+    {
+      "intent": "imFinishedIntent"
+    },
+    {
+      "intent": "AMAZON.HelpIntent"
+    }
+  ]
+}

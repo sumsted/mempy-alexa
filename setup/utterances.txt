@@ -1,0 +1,13 @@
+startPointBreakIntent Start Point Break
+startPointBreakIntent Point Break
+pointBreakOneIntent Too bad. You finally get your waves and it's totally closed out.
+pointBreakTwoIntent You gotta go down. You crossed the line and people trusted you and they died.
+pointBreakThreeIntent  Every day.
+startHolyGrailIntent Start Holy Grail
+startHolyGrailIntent Holy Grail
+holyGrailOneIntent Armaments Chapter Two Verses Nine to Twenty-One.
+holyGrailTwoIntent Skip a bit Brother.
+holyGrailThreeIntent Amen.
+holyGrailFourIntent Right one two {nextNumber}
+holyGrailFourIntent {nextNumber}
+imFinishedIntent I'm finished
