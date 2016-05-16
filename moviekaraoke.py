@@ -135,9 +135,9 @@ def start_point_break(intent, session):
     reprompt_text = None
 
     speech_output = "Special Agent Utah."
-
+    next_line = "SAY: Too bad. You finally get your waves and it's totally closed out."
     return build_response(session_attributes, build_speechlet_response(
-        title, speech_output, reprompt_text, should_end_session))
+        title, speech_output, reprompt_text, should_end_session, next_line))
 
 
 def point_break_1(intent, session):
@@ -147,9 +147,10 @@ def point_break_1(intent, session):
     reprompt_text = None
 
     speech_output = "Just waiting for my set."
+    next_line = "SAY: You gotta go down. You crossed the line and people trusted you and they died."
 
     return build_response(session_attributes, build_speechlet_response(
-        title, speech_output, reprompt_text, should_end_session))
+        title, speech_output, reprompt_text, should_end_session, next_line))
 
 
 def point_break_2(intent, session):
@@ -159,9 +160,10 @@ def point_break_2(intent, session):
     reprompt_text = None
 
     speech_output = "Yeah, it went bad, went real bad. Life sure has a sick sense of humour, doesn't it? Still surfing?"
+    next_line = "SAY: Every day."
 
     return build_response(session_attributes, build_speechlet_response(
-        title, speech_output, reprompt_text, should_end_session))
+        title, speech_output, reprompt_text, should_end_session, next_line))
 
 
 def point_break_3(intent, session):
@@ -183,9 +185,10 @@ def start_holy_grail(intent, session):
     reprompt_text = None
 
     speech_output = "Consult the book of Armaments!"
+    next_line = "SAY: Armaments Chapter Two Verses Nine to Twenty-One."
 
     return build_response(session_attributes, build_speechlet_response(
-        title, speech_output, reprompt_text, should_end_session))
+        title, speech_output, reprompt_text, should_end_session, next_line))
 
 
 def holy_grail_1(intent, session):
@@ -199,11 +202,12 @@ def holy_grail_1(intent, session):
     'Oh, Lord, bless this thy hand grenade that with it thou mayest blow
     thy enemies to tiny bits, in thy mercy.'  And the Lord did grin, and
     people did feast upon the lambs, and sloths, and carp, and anchovies,
-    and orangutans, and breakfast cereals, and fruit bats, and large --
+    and orangutans, and breakfast cereals, and fruit bats, and large
     """
+    next_line = "SAY: Skip a bit Brother."
 
     return build_response(session_attributes, build_speechlet_response(
-        title, speech_output, reprompt_text, should_end_session))
+        title, speech_output, reprompt_text, should_end_session, next_line))
 
 
 def holy_grail_2(intent, session):
@@ -222,9 +226,10 @@ def holy_grail_2(intent, session):
     thy Holy Hand Grenade of Antioch towards thou foe, who being naughty
     in my sight, shall snuff it.
     """
+    next_line = "SAY: Amen."
 
     return build_response(session_attributes, build_speechlet_response(
-        title, speech_output, reprompt_text, should_end_session))
+        title, speech_output, reprompt_text, should_end_session, next_line))
 
 
 def holy_grail_3(intent, session):
@@ -234,9 +239,9 @@ def holy_grail_3(intent, session):
     reprompt_text = None
 
     speech_output = "Amen."
-
+    next_line = "SAY: Right one two five"
     return build_response(session_attributes, build_speechlet_response(
-        title, speech_output, reprompt_text, should_end_session))
+        title, speech_output, reprompt_text, should_end_session, next_line))
 
 
 def holy_grail_4(intent, session):
@@ -249,9 +254,10 @@ def holy_grail_4(intent, session):
         speech_output = "Yes, Three! Boom!"
     else:
         speech_output = "Three, sir!"
+    next_line = "SAY: three"
 
     return build_response(session_attributes, build_speechlet_response(
-        title, speech_output, reprompt_text, should_end_session))
+        title, speech_output, reprompt_text, should_end_session, next_line))
 
 
 def i_am_finished(intent, session):
@@ -273,16 +279,16 @@ def get_slot(intent, key, default=None):
         return default
 
 
-def build_speechlet_response(title, output, reprompt_text, should_end_session):
+def build_speechlet_response(title, speech, reprompt_text, should_end_session, card=None):
     return {
         'outputSpeech': {
             'type': 'PlainText',
-            'text': output
+            'text': speech
         },
         'card': {
             'type': 'Simple',
-            'title': 'SessionSpeechlet - ' + title,
-            'content': 'SessionSpeechlet - ' + output
+            'title': 'Movie Karaoke - ' + title,
+            'content': (speech + ' ' + card) if card else speech
         },
         'reprompt': {
             'outputSpeech': {
